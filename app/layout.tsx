@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@/components/providers/theme-provider'
 import type { ChildProps } from '@/types'
 import type { Metadata } from "next";
 import { Inter, Crete_Round, Work_Sans } from "next/font/google";
@@ -22,8 +23,17 @@ export const metadata: Metadata = {
 
 function RootLayout({children}: ChildProps) {
   return (
-    <html lang="en">
-      <body className={`${crete_round.variable} ${work_sans.variable} overflow-x-hidden`}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${crete_round.variable} ${work_sans.variable} overflow-x-hidden`}>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        {children}
+      </ThemeProvider>
+      </body>
     </html>
   );
 }
