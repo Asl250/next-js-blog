@@ -11,7 +11,7 @@ function ContactPage() {
 				<h2 className='text-center text-4xl section-title font-creteRound mt-2'>
 					<span>Contact</span>
 				</h2>
-				
+
 				<div className='flex gap-1 items-center mt-4'>
 					<Home className='w-4 h-4' />
 					<Link
@@ -24,7 +24,7 @@ function ContactPage() {
 					<p className='text-muted-foreground'>Contact</p>
 				</div>
 			</div>
-			
+
 			<div className='grid grid-cols-2 max-md:grid-cols-1 gap-4 mt-6'>
 				<div className='flex flex-col'>
 					<h1 className='text-4xl font-creteRound'>Contact Devus</h1>
@@ -32,7 +32,7 @@ function ContactPage() {
 						I am here to help and answer any question you might have. I look
 						forward to hearing from you
 					</p>
-					
+
 					<div className='mt-12 flex items-center gap-3'>
 						<Mail className='w-4 h-4' />
 						<p className='text-sm'>info@devus.me</p>
@@ -42,7 +42,7 @@ function ContactPage() {
 						<p className='text-sm'>+98 02 296 4902</p>
 					</div>
 				</div>
-				
+
 				<div>
 					<h1 className='text-4xl font-creteRound mb-2'>Contact form</h1>
 					<div className='flex flex-col space-y-3'>

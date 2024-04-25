@@ -6,8 +6,8 @@ function AuthorCard(author: IAuthor) {
 		<div className='flex flex-col space-y-2 w-52 text-center'>
 			<div className='w-full h-52 relative'>
 				<Image
-					src={author.image}
-					alt='author'
+					src={author.image.url}
+					alt='kumanboy'
 					fill
 					className='object-cover rounded-md grayscale hover:grayscale-0 transition-all'
 				/>

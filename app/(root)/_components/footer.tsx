@@ -7,7 +7,7 @@ import { useState } from 'react'
 
 function Footer() {
 	const [active, setActive] = useState(false)
-	
+
 	return (
 		<footer className='flex-center py-24 flex-col container max-w-2xl space-y-12'>
 			<h1 className='text-5xl max-md:text-3xl font-creteRound text-center'>

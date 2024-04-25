@@ -10,7 +10,7 @@ import {cn} from "@/lib/utils";
 
 const Mobile = () => {
 	const pathName = usePathname()
-	
+
 	return (
 		<Sheet>
 			<SheetTrigger asChild className={'flex md:hidden'}>

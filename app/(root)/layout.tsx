@@ -1,21 +1,15 @@
-import Footer from '@/app/(root)/_components/footer'
-import Navbar from '@/app/(root)/_components/navbar'
+import { ChildProps } from '@/types'
+import Footer from './_components/footer'
+import Navbar from './_components/navbar'
 
-import {ChildProps} from '@/types'
-import { ThemeProvider } from 'next-themes'
-
-function Layout({children}: ChildProps) {
+function Layout({ children }: ChildProps) {
 	return (
-		<>
-			<Navbar/>
-			<div className="conteiner">{children}</div>
-			<Footer/>
-		</>
-
-
-	
-)
+		<main>
+			<Navbar />
+			<div className='container'>{children}</div>
+			<Footer />
+		</main>
+	)
 }
-
 
 export default Layout

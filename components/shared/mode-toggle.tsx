@@ -8,9 +8,9 @@ import { Button } from '../ui/button'
 function ModeToggle() {
 	const [mount, setMount] = useState(false)
 	const { setTheme, resolvedTheme } = useTheme()
-	
+
 	useEffect(() => setMount(true), [])
-	
+
 	return mount && resolvedTheme === 'dark' ? (
 		<Button size={'icon'} variant={'ghost'} onClick={() => setTheme('light')}>
 			<Sun />
