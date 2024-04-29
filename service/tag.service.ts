@@ -1,9 +1,11 @@
-import {IBlog, ICategoryAndTags} from '@/types'
-import request, {gql} from 'graphql-request'
+import { IBlog, ICategoryAndTags } from '@/types'
+import request, { gql } from 'graphql-request'
+import {cache} from "react";
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT!
+
 export const getTags = async () => {
-    const query = gql`
+	const query = gql`
 		query MyQuery {
 			tags {
 				name
@@ -12,16 +14,15 @@ export const getTags = async () => {
 		}
 	`
 
-    const {tags} = await request<{ tags: ICategoryAndTags[] }>(
-        graphqlAPI,
-        query
-    )
-    return tags
+	const { tags } = await request<{ tags: ICategoryAndTags[] }>(
+		graphqlAPI,
+		query
+	)
+	return tags
 }
 
-
-export const getBlogsByTag = async (slug: string) => {
-    const query = gql`
+export const getBlogsByTag = cache( async (slug: string) => {
+	const query = gql`
 		query MyQuery($slug: String!) {
 			tag(where: { slug: $slug }) {
 				blogs {
@@ -56,10 +57,10 @@ export const getBlogsByTag = async (slug: string) => {
 		}
 	`
 
-    const {tag} = await request<{ tag: { blogs: IBlog[]; name: string } }>(
-        graphqlAPI,
-        query,
-        {slug}
-    )
-    return tag
-}
+	const { tag } = await request<{ tag: { blogs: IBlog[]; name: string } }>(
+		graphqlAPI,
+		query,
+		{ slug }
+	)
+	return tag
+})
